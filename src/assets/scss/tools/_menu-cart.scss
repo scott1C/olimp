@@ -1,0 +1,48 @@
+.menu-cart {
+    position: relative;
+
+    // .menu-cart__content
+
+    &__content {
+        @include flex;
+        gap: 10px;
+    }
+
+    // .menu-cart__link
+
+    &__link {
+        align-self: center;
+    }
+
+    // .menu-cart__number
+
+    &__number {
+        position: absolute;
+        bottom: -6px;
+        @include flex-all-center;
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1;
+        color: var(--white);
+        background-color: var(--red);
+    }
+}
+
+@include min-desktop {
+    .menu-cart {
+        &__number {
+            right: -7px;
+        }
+    }
+}
+
+@include desktop {
+    .menu-cart {
+        &__number {
+            left: 90px;
+        }
+    }
+}

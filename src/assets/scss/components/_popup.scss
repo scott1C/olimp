@@ -1,0 +1,228 @@
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    background-color: var(--shadow);
+    transition: opacity .5s ease-in, visibility .5s ease-in;
+
+    &--open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &--open .popup__content {
+        opacity: 1;
+        transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+    }
+
+    // .popup__body
+
+    &__body {
+        @include flex-all-center;
+        min-height: 100%;
+    }
+
+    // .popup__content
+
+    &__content {
+        width: 100%;
+        max-width: var(--container-width);
+        padding: var(--medium-offset);
+        opacity: 0;
+        color: var(--blue-grey);
+        background-color: var(--white);
+        transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+        transition: opacity .5s ease-in, transform .5s ease-in;
+    }
+
+    // .popup__top
+
+    &__top {
+        @include flex;
+        gap: var(--grid-gap);
+        margin-bottom: var(--medium-offset);
+    }
+
+    // .popup__top-sliders
+
+    &__top-sliders {
+        max-width: 520px;
+    }
+
+    // .popup__top-inner
+
+    &__top-inner {
+        max-width: 430px;
+    }
+
+    // .popup__information
+
+    &__information {
+        margin-bottom: var(--medium-offset);
+        font-weight: 400;
+        font-size: rem(16);
+        line-height: 1;
+        color: var(--grey);
+    }
+
+    // .popup__vendor-code, 
+    // .popup__stock
+
+    &__vendor-code,
+    &__stock {
+        display: inline-flex;
+        column-gap: 10px;
+    }
+
+    // .popup__vendor-code
+
+    &__vendor-code {
+        margin-right: 47px;
+    }
+
+    // .popup__stock-number
+
+    &__stock-number {
+        color: var(--blue-grey);
+    }
+
+    // .popup__title
+
+    &__title {
+        margin-bottom: var(--small-offset);
+        font-weight: 400;
+        font-size: rem(24);
+        line-height: 1.4;
+        color: var(--blue-grey);
+    }
+
+    // .popup__rating
+
+    &__rating {
+        margin-bottom: var(--small-offset);
+    }
+
+    // .popup__form
+
+    &__form {
+        margin-bottom: var(--medium-offset);
+    }
+
+    // .popup__prices
+
+    &__prices {
+        @include flex;
+        align-items: center;
+        margin-bottom: 78px;
+    }
+
+    // .popup__price-new
+
+    &__price-new {
+        margin-right: 32px;
+        font-weight: 700;
+        font-size: rem(30);
+        line-height: 1;
+        color: var(--blue-grey);
+    }
+
+    // .popup__price-old
+
+    &__price-old {
+        font-weight: 400;
+        font-size: rem(16);
+        line-height: 1;
+        color: var(--grey);
+    }
+
+    // .popup__button
+
+    &__button {
+        @include flex-all-center;
+        width: 430px;
+        height: 60px;
+        margin-bottom: var(--small-offset);
+        padding: 5px;
+        font-weight: 400;
+        font-size: rem(16);
+        line-height: 1;
+        color: var(--white);
+        background-color: var(--red);
+    }
+
+    // .popup__item
+
+    &__item {
+        position: relative;
+        @include mb(10);
+        padding-left: 25px;
+        font-weight: 400;
+        font-size: rem(14);
+        line-height: 1;
+        color: #B2B5BB;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 15px;
+            height: 13px;
+            background-image: url("data:image/svg+xml,%3Csvg width='15' height='13' viewBox='0 0 15 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.88926 12.1268C5.74901 12.2672 5.55776 12.3457 5.35901 12.3457C5.16026 12.3457 4.96901 12.2672 4.82876 12.1268L0.594273 7.90715C0.154774 7.46927 0.154774 6.7594 0.594273 6.32227L1.12452 5.79398C1.56402 5.3561 2.27577 5.3561 2.71527 5.79398L5.35901 8.42797L12.5027 1.31059C12.9422 0.872708 13.6547 0.872708 14.0935 1.31059L14.6237 1.83888C15.0632 2.27676 15.0632 2.98663 14.6237 3.42376L5.88926 12.1268Z' fill='%23B2B5BB'/%3E%3C/svg%3E%0A");
+        }
+    }
+
+    // .popup__bottom
+
+    &__bottom {
+        @include flex;
+        column-gap: 109px;
+    }
+
+    // .popup__description
+
+    &__description {
+        max-width: 430px;
+    }
+
+    // .popup__sub-title
+
+    &__sub-title {
+        margin-bottom: var(--small-offset);
+        font-weight: 400;
+        font-size: rem(24);
+        line-height: 1;
+        color: var(--blue-grey);
+    }
+
+    // .popup__description-text
+
+    &__description-text {
+        font-weight: 400;
+        font-size: rem(16);
+        line-height: 1.4;
+        color: var(--blue-grey);
+    }
+
+    // .popup__characteristics-item
+
+    &__characteristics-item {
+        @include mb(10);
+        font-weight: 400;
+        font-size: rem(16);
+        line-height: 1.4;
+        color: var(--blue-grey);
+    }
+
+    // .popup__thumbs
+
+    &__thumbs {
+        cursor: grab;
+    }
+}

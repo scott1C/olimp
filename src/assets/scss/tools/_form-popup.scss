@@ -1,0 +1,48 @@
+.form-popup {
+
+    // .form-popup__text
+
+    &__text {
+        margin-bottom: var(--small-offset);
+        font-weight: 400;
+        font-size: rem(16);
+        line-height: 1;
+        color: var(--blue-grey);
+    }
+
+    // .form-popup__items
+
+    &__items {
+        @include flex-all-sb;
+        flex-wrap: wrap;
+    }
+
+    // .form-popup__item
+
+    &__item {
+        @include flex-all-center;
+        width: 70px;
+        height: 32px;
+        border-radius: 4px;
+        border: 1px solid var(--grey);
+    }
+
+    // .form-popup__radio
+
+    &__radio {
+        position: absolute;
+
+        &:checked+.form-popup__content {
+            color: var(--red);
+        }
+    }
+
+    // .form-popup__content
+
+    &__content {
+        font-weight: 400;
+        font-size: rem(14);
+        line-height: 1;
+        color: var(--blue-grey);
+    }
+}

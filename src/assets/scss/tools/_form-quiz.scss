@@ -1,0 +1,141 @@
+.form-quiz {
+
+    // .form-quiz__title
+
+    &__title {
+        margin-bottom: var(--small-offset);
+        font-weight: 400;
+        font-size: rem(24);
+        line-height: 1;
+        color: var(--blue-grey);
+    }
+
+    // .form-quiz__inner
+
+    &__inner {
+        margin-bottom: var(--small-offset);
+        padding-top: var(--small-offset);
+        border-top: 1px solid #808080;
+        border-bottom: 1px solid #808080;
+    }
+
+    // .form-quiz__list
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px 70px;
+        margin-bottom: var(--medium-offset);
+    }
+
+    // .form-quiz__image
+
+    &__image {
+
+        // .form-quiz__image--1
+
+        &--1 {
+            margin-bottom: 10px;
+        }
+    }
+
+    // .form-quiz__label
+
+    &__label {
+
+        // .form-quiz__label--1
+
+        &--1 {
+            display: block;
+        }
+    }
+
+    // .form-quiz__textarea
+
+    &__textarea {
+        margin-bottom: 82px;
+        width: 465px;
+        height: 246px;
+        padding: var(--small-offset);
+        font-weight: 400;
+        font-size: rem(16);
+        line-height: 1;
+        color: var(--apricot);
+    }
+
+    // .form-quiz__bottom
+
+    &__bottom {
+        @include flex-all-sb;
+    }
+
+    // .form-quiz__number
+
+    &__number {
+        font-weight: 400;
+        font-size: rem(16);
+        line-height: 1;
+        color: #808080;
+    }
+
+    // .form-quiz__button
+
+    &__button {
+        @include flex-all-center;
+        width: 210px;
+        height: 50px;
+        padding: 10px;
+        border: 1px solid var(--blue-grey);
+        border-radius: 4px;
+        font-weight: 400;
+        font-size: rem(16);
+        line-height: 1;
+        color: var(--blue-grey);
+    }
+}
+
+@include desktop {
+    .form-quiz {
+
+        &__list {
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--small-offset);
+        }
+    }
+}
+
+@include small-tablet {
+
+    .form-quiz {
+
+        &__textarea {
+            width: 460px;
+        }
+    }
+}
+
+@include mobile {
+    .form-quiz {
+
+        &__list {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 30px;
+            margin-bottom: var(--small-offset);
+        }
+
+        &__title {
+            text-align: center;
+        }
+
+        &__button {
+            width: 150px;
+            height: 40px;
+        }
+
+        &__textarea {
+            display: flex;
+            width: 270px;
+            margin: 0 auto;
+        }
+    }
+}

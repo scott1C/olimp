@@ -1,0 +1,29 @@
+// basic connections
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+// connecting page components
+@import "./components/header";
+@import "./components/menu";
+@import "./components/hero";
+@import "./components/catalog";
+@import "./components/product";
+@import "./components/about";
+@import "./components/team";
+@import "./components/faq";
+@import "./components/contacts";
+@import "./components/quiz";
+@import "./components/photos";
+@import "./components/footer";
+@import "./components/popup";
+
+// connecting tools for pages
+@import "./tools/menu-cart";
+@import "./tools/menu-ordering";
+@import"./tools/menu-products";
+@import "./tools/custom-checkbox";
+@import "./tools/form-quiz";
+@import "./tools/last-question";
+@import "./tools/form-popup";
